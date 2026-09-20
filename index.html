@@ -19,7 +19,7 @@
             --paper: #f5f7f5;
             --white: #fff;
             --navy: #123047;
-            --teal: #0f766e;
+            --teal: #176b63;
             --mint: #d9f0e8;
             --orange: #d96f3b;
             --line: #d7e1df;
@@ -51,7 +51,7 @@
             background: rgba(18, 48, 71, .97);
             display: flex;
             justify-content: space-between;
-            padding: 15px 7%;
+            padding: 12px 6%;
             position: sticky;
             top: 0;
             z-index: 10;
@@ -89,40 +89,14 @@
         }
 
         .hero {
-            background: linear-gradient(120deg, #123047 0%, #165f66 100%);
+            background: #123047;
             color: var(--white);
-            min-height: 590px;
-            overflow: hidden;
-            padding: 112px 7% 96px;
-            position: relative;
-        }
-
-        .hero::before {
-            border: 1px solid rgba(255, 255, 255, .16);
-            border-radius: 50%;
-            content: "";
-            height: 540px;
-            position: absolute;
-            right: -155px;
-            top: -190px;
-            width: 540px;
-        }
-
-        .hero::after {
-            background: rgba(217, 111, 59, .85);
-            content: "";
-            height: 110px;
-            position: absolute;
-            right: 14%;
-            top: 22%;
-            transform: rotate(12deg);
-            width: 6px;
+            min-height: 460px;
+            padding: 90px 7% 72px;
         }
 
         .hero-content {
             max-width: 850px;
-            position: relative;
-            z-index: 1;
         }
 
         .eyebrow,
@@ -137,14 +111,8 @@
             color: #a9e0d2;
         }
 
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -.04em;
-        }
-
         h1 {
-            font-size: clamp(3rem, 8vw, 6.8rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             line-height: 1;
             margin: 20px 0 24px;
             max-width: 850px;
@@ -177,18 +145,18 @@
         }
 
         .button {
-            border-radius: 4px;
+            border-radius: 3px;
             display: inline-block;
             font-size: .9rem;
             font-weight: 800;
             padding: 12px 18px;
             text-decoration: none;
-            transition: transform .25s ease, box-shadow .25s ease;
+            transition: background-color .25s ease, transform .25s ease;
         }
 
         .button:hover,
         .button:focus {
-            box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .16);
             transform: translateY(-3px);
         }
 
@@ -205,7 +173,14 @@
         section {
             margin: 0 auto;
             max-width: 1180px;
-            padding: 96px 7%;
+            padding: 68px 7%;
+        }
+
+        #projects {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 7%;
+            padding-bottom: 7%;
         }
 
         .section-label {
@@ -214,10 +189,9 @@
         }
 
         .section-heading {
-            margin-bottom: 36px;
+            margin-bottom: 20px;
         }
 
-        .section-heading p,
         .about-copy {
             color: var(--muted);
             max-width: 700px;
@@ -257,7 +231,7 @@
             background: var(--white);
             border-top: 4px solid var(--teal);
             box-shadow: var(--shadow);
-            padding: 30px;
+            padding: 22px 24px;
         }
 
         .skill-panel h3 {
@@ -303,14 +277,14 @@
 
         .cards {
             display: grid;
-            gap: 20px;
+            gap: 10px;
             grid-template-columns: repeat(3, 1fr);
         }
 
         .card {
             background: var(--white);
             border: 1px solid var(--line);
-            padding: 28px;
+            padding: 16px 18px;
             transition: box-shadow .3s ease, transform .3s ease;
         }
 
@@ -322,11 +296,6 @@
         .card p,
         .card li {
             color: var(--muted);
-        }
-
-        .card ul {
-            margin: 15px 0 0;
-            padding-left: 20px;
         }
 
         .meta {
@@ -343,13 +312,13 @@
             border-left: 2px solid var(--teal);
             color: var(--ink);
             margin-top: 18px;
-            padding-left: 14px;
+            padding-left: 20px;
         }
 
         .timeline {
             border-left: 2px solid var(--teal);
             display: grid;
-            gap: 30px;
+            gap: 22px;
             padding-left: 27px;
         }
 
@@ -410,34 +379,12 @@
             color: #a9d8cc;
         }
 
-        .social-note {
-            color: #9fb8bf;
-            font-size: .78rem;
-            margin-top: 24px;
-        }
-
         footer {
             background: #0b2034;
             color: #9bb3ba;
             font-size: .8rem;
             padding: 22px 7%;
             text-align: center;
-        }
-
-        .reveal {
-            animation: rise .8s ease both;
-        }
-
-        @keyframes rise {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @media (max-width:700px) {
@@ -459,17 +406,12 @@
             }
 
             .hero {
-                min-height: 600px;
-                padding: 88px 7% 70px;
-            }
-
-            .hero::after {
-                right: 8%;
-                top: 13%;
+                min-height: 420px;
+                padding: 72px 7% 56px;
             }
 
             section {
-                padding: 70px 7%;
+                padding: 52px 7%;
             }
 
             .about-grid,
@@ -486,17 +428,6 @@
                 width: 100%;
             }
         }
-
-        @media (prefers-reduced-motion:reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                scroll-behavior: auto !important;
-                transition-duration: .01ms !important;
-            }
-        }
     </style>
 </head>
 
@@ -505,45 +436,47 @@
         <a class="logo" href="#about">Dipali Dhoriya <span>/ Portfolio</span></a>
         <nav class="menu" aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a
                 href="#projects">Projects</a><a href="#education">Education</a><a href="#experience">Experience</a><a
-                href="#contact">Contact</a></nav>
+                href="#achievements">Achievements</a><a href="#contact">Contact</a></nav>
     </header>
     <main>
         <section class="hero" id="about">
-            <div class="hero-content reveal">
-                <div class="eyebrow">Computer Engineering · Semester 3</div>
+            <div class="hero-content">
+                <div class="eyebrow">Computer Engineering student</div>
                 <h1>Dipali Dhoriya</h1>
-                <p>Computer Engineering student with an interest in web development and cybersecurity.</p>
-                <div class="hero-actions"><a class="button button-primary" href="#projects">Download CV</a><a
-                        class="button button-quiet" href="#contact">Contact me</a></div>
+                <p>I am learning how websites work and building my foundation in cybersecurity.</p>
+                <div class="hero-actions"><a class="button button-primary" href="resume.html" target="_blank"
+                        rel="noopener noreferrer">View my resume</a><a class="button button-quiet"
+                        href="#contact">Contact me</a></div>
             </div>
         </section>
         <section>
             <div class="about-grid">
                 <div>
-                    <div class="section-label">About me</div>
+                    <div class="section-label">A little about me</div>
                     <div class="section-heading">
-                        <h2>Building a strong foundation in technology.</h2>
+                        <h2>Learning by making things.</h2>
                     </div>
-                    <p class="about-copy">I am a Computer Engineering student at Parul University with an interest in
-                        cybersecurity and web development. I enjoy creating practical projects and finding clear
-                        solutions to coding challenges.</p>
-                    <p class="about-copy">Alongside technology, I enjoy sketching, drawing, and fashion design. I am
-                        always interested in learning new concepts and improving my technical skills.</p>
+                    <p class="about-copy">I am studying Computer Engineering at Parul University. I am interested in
+                        web development and cybersecurity, and I learn best when I can use a new idea in a small
+                        project.</p>
+                    <p class="about-copy">I also enjoy sketching, drawing, and fashion design. These interests help me
+                        think creatively when I am working on a website.</p>
                 </div>
                 <ul class="focus-list" aria-label="Personal details">
                     <li><strong>Currently learning</strong><span>HTML, CSS, C, Python, C++ and cybersecurity
                             fundamentals</span></li>
-                    <li><strong>Location</strong><span>Vadodra, Gujarat, India</span></li>
+                    <li><strong>Location</strong><span>Vadodara, Gujarat, India</span></li>
                 </ul>
             </div>
         </section>
+
         <section class="band" id="skills">
             <div class="section-heading">
                 <div class="section-label">Skills</div>
                 <h2>Technical and soft skills</h2>
             </div>
             <div class="skill-panel">
-                <h3>What I am learning and practising</h3>
+                <h3>Things I am working on</h3>
                 <div class="skill-group">
                     <h4>Technical</h4>
                     <div class="skills"><span class="skill">HTML</span><span class="skill">CSS</span><span
@@ -552,8 +485,7 @@
                 </div>
                 <div class="skill-group">
                     <h4>Soft skills</h4>
-                    <div class="skills"></div><span
-                            class="skill soft-skill">Presentation</span><span
+                    <div class="skills"><span class="skill soft-skill">Presentation</span><span
                             class="skill soft-skill">Curiosity</span><span class="skill soft-skill">Creative
                             thinking</span><span class="skill soft-skill">Willingness to learn</span></div>
                 </div>
