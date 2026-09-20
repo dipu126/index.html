@@ -1,172 +1,669 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Dipali Dhoriya - Portfolio Menu</title>
-<style>
-  body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:rgb(152, 152, 169);
-  }
-  /* Navigation Bar */
-  .navbar{
-    background:#0a1931;
-    padding:15px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-  }
-  .logo{
-    color:white;
-    font-size:22px;
-    font-weight:bold;
-  }
-  .menu a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:15px;
-    padding:8px 14px;
-    border-radius:20px;
-  }
-  .menu a:hover{
-    background:white;
-    color:#0a1931;
-  }
-  /* Sections */
-  section{
-    padding:60px 8%;
-    border-bottom:1px double #eee;
-  }
-  h2{
-    color:#0a1931;
-    font-size:24px;
-    margin-bottom:15px;
-  }
-  p{
-    color:#090909;
-    line-height:1.6;
-    max-width:700px;
-  }
-  .education-box{
-    background:#1c293e;
-    color:rgb(255, 255, 255);
-    padding:20px;
-    border-radius:15px;
-    margin-top:15px;
-    max-width:700px;
-  }
-  /* Award Box */
-  .award-box{
-    background:#1c293e;
-    color:rgb(249, 245, 245) !important;
-    padding:20px;
-    border-radius:15px;
-    margin-top:15px;
-    max-width:700px;
-  }
-  .contact-box{
-    background:#1c293e;
-    color:rgb(255, 255, 255) !important;
-    padding:20px;
-    border-radius:15px;
-    margin-top:15px;
-    max-width:700px;
-  }
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Dipali Dhoriya, a Computer Engineering student focused on web development and cybersecurity.">
+    <title>Dipali Dhoriya | Computer Engineering Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #17212b;
+            --muted: #60707a;
+            --paper: #f5f7f5;
+            --white: #fff;
+            --navy: #123047;
+            --teal: #0f766e;
+            --mint: #d9f0e8;
+            --orange: #d96f3b;
+            --line: #d7e1df;
+            --shadow: 0 18px 50px rgba(18, 48, 71, .1);
+        }
 
-</style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Manrope", sans-serif;
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .navbar {
+            align-items: center;
+            background: rgba(18, 48, 71, .97);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #9ed8ca;
+            font-weight: 500;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: flex-end;
+        }
+
+        .menu a {
+            color: #dce9ee;
+            font-size: .8rem;
+            padding: 7px 9px;
+            text-decoration: none;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            color: #9ed8ca;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #123047 0%, #165f66 100%);
+            color: var(--white);
+            min-height: 590px;
+            overflow: hidden;
+            padding: 112px 7% 96px;
+            position: relative;
+        }
+
+        .hero::before {
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-radius: 50%;
+            content: "";
+            height: 540px;
+            position: absolute;
+            right: -155px;
+            top: -190px;
+            width: 540px;
+        }
+
+        .hero::after {
+            background: rgba(217, 111, 59, .85);
+            content: "";
+            height: 110px;
+            position: absolute;
+            right: 14%;
+            top: 22%;
+            transform: rotate(12deg);
+            width: 6px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow,
+        .section-label {
+            font-family: "DM Mono", monospace;
+            font-size: .76rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow {
+            color: #a9e0d2;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -.04em;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6.8rem);
+            line-height: 1;
+            margin: 20px 0 24px;
+            max-width: 850px;
+        }
+
+        h2 {
+            color: var(--navy);
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.1;
+            margin: 10px 0 16px;
+        }
+
+        h3 {
+            color: var(--navy);
+            line-height: 1.25;
+            margin: 0 0 10px;
+        }
+
+        .hero p {
+            color: #d9e9eb;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 690px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .button {
+            border-radius: 4px;
+            display: inline-block;
+            font-size: .9rem;
+            font-weight: 800;
+            padding: 12px 18px;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .button:hover,
+        .button:focus {
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+            transform: translateY(-3px);
+        }
+
+        .button-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .button-quiet {
+            border: 1px solid rgba(255, 255, 255, .4);
+            color: var(--white);
+        }
+
+        section {
+            margin: 0 auto;
+            max-width: 1180px;
+            padding: 96px 7%;
+        }
+
+        .section-label {
+            color: var(--orange);
+            font-weight: 500;
+        }
+
+        .section-heading {
+            margin-bottom: 36px;
+        }
+
+        .section-heading p,
+        .about-copy {
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        .about-grid {
+            align-items: start;
+            display: grid;
+            gap: 70px;
+            grid-template-columns: 1.15fr .85fr;
+        }
+
+        .about-copy {
+            font-size: 1.05rem;
+        }
+
+        .focus-list {
+            border-left: 3px solid var(--teal);
+            display: grid;
+            gap: 18px;
+            list-style: none;
+            margin: 10px 0 0;
+            padding: 5px 0 5px 25px;
+        }
+
+        .focus-list strong {
+            color: var(--navy);
+            display: block;
+        }
+
+        .focus-list span {
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        .skill-panel {
+            background: var(--white);
+            border-top: 4px solid var(--teal);
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .skill-panel h3 {
+            font-size: 1.35rem;
+        }
+
+        .skill-group {
+            margin-top: 22px;
+        }
+
+        .skill-group h4 {
+            color: var(--muted);
+            font-size: .75rem;
+            letter-spacing: .1em;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            background: var(--mint);
+            border-radius: 3px;
+            color: #155c56;
+            font-size: .84rem;
+            font-weight: 700;
+            padding: 7px 10px;
+        }
+
+        .soft-skill {
+            background: #edf1f3;
+            color: var(--ink);
+        }
+
+        .band {
+            background: var(--white);
+            max-width: none;
+        }
+
+        .cards {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 28px;
+            transition: box-shadow .3s ease, transform .3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-4px);
+        }
+
+        .card p,
+        .card li {
+            color: var(--muted);
+        }
+
+        .card ul {
+            margin: 15px 0 0;
+            padding-left: 20px;
+        }
+
+        .meta {
+            color: var(--teal);
+            font-family: "DM Mono", monospace;
+            font-size: .78rem;
+        }
+
+        .project-card {
+            border-top: 4px solid var(--orange);
+        }
+
+        .project-card .result {
+            border-left: 2px solid var(--teal);
+            color: var(--ink);
+            margin-top: 18px;
+            padding-left: 14px;
+        }
+
+        .timeline {
+            border-left: 2px solid var(--teal);
+            display: grid;
+            gap: 30px;
+            padding-left: 27px;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            background: var(--orange);
+            border: 4px solid var(--paper);
+            border-radius: 50%;
+            content: "";
+            height: 10px;
+            left: -36px;
+            position: absolute;
+            top: 5px;
+            width: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            margin: 5px 0 0;
+            max-width: 720px;
+        }
+
+        .contact {
+            background: var(--navy);
+            color: var(--white);
+            max-width: none;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--white);
+        }
+
+        .contact p {
+            color: #c8dadd;
+            margin: 0 auto 25px;
+            max-width: 580px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 28px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .contact-details a {
+            color: #dce9ee;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: #a9d8cc;
+        }
+
+        .social-note {
+            color: #9fb8bf;
+            font-size: .78rem;
+            margin-top: 24px;
+        }
+
+        footer {
+            background: #0b2034;
+            color: #9bb3ba;
+            font-size: .8rem;
+            padding: 22px 7%;
+            text-align: center;
+        }
+
+        .reveal {
+            animation: rise .8s ease both;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width:700px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+                padding: 14px 5%;
+            }
+
+            .menu {
+                gap: 2px;
+                justify-content: flex-start;
+            }
+
+            .menu a {
+                font-size: .72rem;
+                padding: 4px 6px;
+            }
+
+            .hero {
+                min-height: 600px;
+                padding: 88px 7% 70px;
+            }
+
+            .hero::after {
+                right: 8%;
+                top: 13%;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+
+            .about-grid,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                gap: 38px;
+            }
+
+            .hero-actions .button {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
-
-  <!-- NAVIGATION MENU -->
-  <header class="navbar">
-    <div class="logo">Dipali Dhoriya</div>
-    <div class="menu">
-      <a href="#about">About Me</a>
-      <a href="#education">Education</a>
-      <a href="#summary">Summary</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Award</a>
-            <a href="#contact">contact</a>
-
-      
-    </div>
-  </header>
-
-  <!-- ABOUT ME -->
-  <section id="about">
-    <h2>About Me !</h2>
-    <h2>Dipali Dhoriya</h2>
-    <h3>computer diploma student</h3>
-    <h4>parul university</h4>
-    <p>
-      Hello! I am Dipali Dhoriya, Roll No: 2503396160018, Computer Engineering student from Vadodara. 
-      I am interested in Web Development and cybersecurity. I am so exited to learn new things in computer like haking 
-      and devlop websites and etc..
-    </p>
-  </section>
-
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-box">
-    <p><b>
-      computer diploma in parul university <br>
-      CGPA 8.14 
-    </b><br><br>
-  <b>
- 10 pass 2024-25 <br>
- 75.67%
-  </b><br><br>
-
-  <b>Currently i study in 3 sem and 2year in computer diploma in parul university</b>
-  </p></div>
-</section>
-
-  <!-- SUMMARY -->
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>
-      A hardworking and creative Computer Engineering student with basic knowledge of HTML, CSS, C, and Python. 
-      Currently i am reading about c++, and hacking basic .My goal is work in cybersecurity.i am so creative in paintig.
-      My hobby is work on sketching and drawing.i also interested in Fashion Design.I enjoy building things from scratch and finding efficient ways to solve coding challenges. I am actively looking for internship opportunities where I can contribute to a team and fast-track my growth."
-
-    </p>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <p>
-      <b> SIH Internal Hackathon 2026</b><br>
-      Working on problem statement solution and project presentation.<br><br>
-      <b> College Web Development Workshop</b> - Participant<br>
-      Learned HTML, CSS basics and made portfolio project.
-  
-    </p>
-  </section>
-  
-
-  <!-- AWARD -->
-  <section id="awards">
-    <h2>Award</h2>
-    <div class="award-box">
-      <p> Drawing competition -first price school , rajkot 2018. </p>
-      <p>Participation Certificate - Web Development Workshop</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>contact</h2>
-    <div class="contact-box">
-      <p> Drawing competition -first price school , rajkot 2018. </p>
-      <p>Participation Certificate - Web Development Workshop</p>
-    </div>
-  </section>
-
-
+    <header class="navbar">
+        <a class="logo" href="#about">Dipali Dhoriya <span>/ Portfolio</span></a>
+        <nav class="menu" aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a
+                href="#projects">Projects</a><a href="#education">Education</a><a href="#experience">Experience</a><a
+                href="#contact">Contact</a></nav>
+    </header>
+    <main>
+        <section class="hero" id="about">
+            <div class="hero-content reveal">
+                <div class="eyebrow">Computer Engineering · Semester 3</div>
+                <h1>Dipali Dhoriya</h1>
+                <p>Computer Engineering student with an interest in web development and cybersecurity.</p>
+                <div class="hero-actions"><a class="button button-primary" href="#projects">Download CV</a><a
+                        class="button button-quiet" href="#contact">Contact me</a></div>
+            </div>
+        </section>
+        <section>
+            <div class="about-grid">
+                <div>
+                    <div class="section-label">About me</div>
+                    <div class="section-heading">
+                        <h2>Building a strong foundation in technology.</h2>
+                    </div>
+                    <p class="about-copy">I am a Computer Engineering student at Parul University with an interest in
+                        cybersecurity and web development. I enjoy creating practical projects and finding clear
+                        solutions to coding challenges.</p>
+                    <p class="about-copy">Alongside technology, I enjoy sketching, drawing, and fashion design. I am
+                        always interested in learning new concepts and improving my technical skills.</p>
+                </div>
+                <ul class="focus-list" aria-label="Personal details">
+                    <li><strong>Currently learning</strong><span>HTML, CSS, C, Python, C++ and cybersecurity
+                            fundamentals</span></li>
+                    <li><strong>Location</strong><span>Vadodra, Gujarat, India</span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="band" id="skills">
+            <div class="section-heading">
+                <div class="section-label">Skills</div>
+                <h2>Technical and soft skills</h2>
+            </div>
+            <div class="skill-panel">
+                <h3>What I am learning and practising</h3>
+                <div class="skill-group">
+                    <h4>Technical</h4>
+                    <div class="skills"><span class="skill">HTML</span><span class="skill">CSS</span><span
+                            class="skill">C</span><span class="skill">Python</span><span class="skill">C++</span><span
+                            class="skill">Cybersecurity fundamentals</span></div>
+                </div>
+                <div class="skill-group">
+                    <h4>Soft skills</h4>
+                    <div class="skills"></div><span
+                            class="skill soft-skill">Presentation</span><span
+                            class="skill soft-skill">Curiosity</span><span class="skill soft-skill">Creative
+                            thinking</span><span class="skill soft-skill">Willingness to learn</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="section-heading">
+                <div class="section-label">Projects</div>
+                <h2>Projects and practical learning</h2>
+            </div>
+            <div class="cards">
+                <article class="card project-card">
+                    <div class="meta">01 / PORTFOLIO PROJECT</div>
+                    <h3>Personal portfolio website</h3>
+                    <p><strong>Purpose:</strong> Create a clear online presentation of my education, skills, and work.
+                    </p>
+                    <p><strong>Technologies:</strong> HTML, CSS</p>
+                    <p><strong>Contribution:</strong> Planned the page structure, wrote the content, and built the
+                        responsive layout.</p>
+                    <p class="result"><strong>Result:</strong> A responsive portfolio that presents my profile in one
+                        place.</p>
+                </article>
+                <article class="card project-card">
+                    <div class="meta">02 / SIH INTERNAL HACKATHON</div>
+                    <h3>Email spam detection system</h3>
+                    <p><strong>Purpose:</strong> Detect whether an email is legitimate or likely to be spam.</p>
+                    <p><strong>Activity:</strong> Worked with a team to develop a solution that checks email content
+                        and identifies common spam signals.</p>
+                    <p><strong>Contribution:</strong> Took part in developing the detection idea and presenting the
+                        project to a team.</p>
+                    <p class="result"><strong>Learning:</strong> Practised cybersecurity concepts, collaborative
+                        problem solving, and project presentation.</p>
+                </article>
+                <article class="card project-card">
+                    <div class="meta">03 / SEMESTER 1 PROJECT</div>
+                    <h3>Tree conservation information website</h3>
+                    <p><strong>Purpose:</strong> Help users learn practical ways to save trees and protect the
+                        environment.</p>
+                    <p><strong>Features:</strong> Users can view tree and population information and read advice for
+                        planting, caring for, and conserving trees.</p>
+                    <p><strong>Contribution:</strong> Planned the website content and created a simple, informative
+                        interface for sharing environmental awareness.</p>
+                    <p class="result"><strong>Learning:</strong> Improved my HTML and CSS skills while turning an
+                        environmental topic into a useful website.</p>
+                </article>
+            </div>
+        </section>
+        <section class="band" id="education">
+            <div class="section-heading">
+                <div class="section-label">Academic foundation</div>
+                <h2>Education</h2>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <div class="meta">CURRENT · SEMESTER 3</div>
+                    <h3>Diploma in Computer Engineering</h3>
+                    <p><strong>Parul University</strong><br>CGPA: <strong>8.14</strong></p>
+                </article>
+                <article class="card">
+                    <div class="meta">2024-25</div>
+                    <h3>Secondary Education</h3>
+                    <p><strong>10th Standard</strong><br>Percentage: <strong>75.67%</strong></p>
+                </article>
+            </div>
+        </section>
+        <section id="experience">
+            <div class="section-heading">
+                <div class="section-label">Activities</div>
+                <h2>Workshops and participation</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="meta">2026</div>
+                    <h3>SIH Internal Hackathon</h3>
+                    <p>Worked with a team on an email spam detection project that checks whether an email is spam and
+                        presented the solution.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="meta">COLLEGE WORKSHOP</div>
+                    <h3>Web Development Workshop</h3>
+                    <p>Learned HTML and CSS fundamentals and applied them by creating this portfolio project.</p>
+                </div>
+            </div>
+        </section>
+        <section class="band" id="achievements">
+            <div class="section-heading">
+                <div class="section-label">Milestones</div>
+                <h2>Achievements & certificates</h2>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <h3>First prize, drawing competition</h3>
+                    <p>Received first prize in a school drawing competition in Rajkot, 2018.</p>
+                </article>
+                <article class="card">
+                    <h3>Web development workshop</h3>
+                    <p>Participation certificate for completing a college workshop focused on web development
+                        fundamentals.</p>
+                </article>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="section-label">Contact</div>
+            <h2>Get in touch.</h2>
+            <p>Thank you for visiting my portfolio.</p>
+            <div class="contact-details"><a href="mailto:dipalidhoriya1@gmail.com">dipalidhoriya1@gmail.com</a><a
+                    href="tel:+919265785384">+91 92657 85384</a></div>
+        </section>
+    </main>
+    <footer>Designed and built by Dipali Dhoriya · 2026</footer>
 </body>
+
 </html>
